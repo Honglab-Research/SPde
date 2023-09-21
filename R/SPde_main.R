@@ -7,9 +7,9 @@
 #   Juyoung Lee (wnddl111@catholic.ac.kr)
 #   Hong lab team, catholic univ.
 
-#' @title SPde
+#' @title CSGs
 #' @description
-#' Find Synergistic gene Pairs in Drug Efficacy 
+#' Find clinically significant gene sets in GBM. 
 #'
 #' @param eff from output of PrepareCERES
 #' @param annot from output of PrepareAnnotationFile
@@ -24,7 +24,7 @@
 #' @return A data.frame of res. This data frame represents the clinically significant genes in GBM that resulted from the Cox analysis.
 #'
 #' @export
-SPde <- function(eff,annot,exp, pheno, clincal,cancer_type = 'GBM', gef = -1, percent = 1, fc = 1) {
+CSGs <- function(eff,annot,exp, pheno, clincal,cancer_type = 'GBM', gef = -1, percent = 1, fc = 1) {
   
   #1. Cell line level analysis
   ## Get GBM CERES data 
