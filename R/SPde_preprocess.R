@@ -90,7 +90,7 @@ preprocess <- function(exp){
 #'
 #' @export
 #
-deg <- function(exp,metadata){
+deg <- function(exp,metadata,fc){
   metadata = metadata[which(metadata$sampleID %in% colnames(exp)),c('sampleID','sample_type')]
   
   sam = metadata[which(metadata$sample_type != ''),]$sampleID
@@ -114,8 +114,8 @@ deg <- function(exp,metadata){
   dim(res) 
 
   #Extract significantly differential expressed genes between normal and tumor
-  upres = res[which(res$logFC >= 1),]
-  dnres = res[which(res$logFC <= -1),]
+  upres = res[which(res$logFC >= fc),]
+  dnres = res[which(res$logFC <= -fc),]
   f_res = rbind(upres,dnres)
   
   g= rownames(f_res[which(f_res$P.Value <=0.05),])
