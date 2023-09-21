@@ -13,7 +13,7 @@
 #'
 #' @param eff from output of PrepareCERES
 #' @param annot from output of PrepareAnnotationFile
-#' @param exp from output of !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#' @param exp from output of MergeAgilentNGS
 #' @param pheno; phenotype data(TCGA-GBM)
 #' @param clinical; clincal data(TCGA-GBM)
 #' @param cancer_type; The default is 'GBM', but you can replace it with another cancer type according to your research area.
