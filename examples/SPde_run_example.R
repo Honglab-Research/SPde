@@ -18,7 +18,7 @@ rna_exp = read.table('../path/rna_exp.txt', check.names = F)
 exp = read.table('../path/agilent_ngs_onlyT_pre_gbm_t_final_exp.txt', check.names = FALSE) #extract only tumor data from output of MergeAgilentNGS.
 rtk = read.csv('../path/RTK_list.csv')
 
-annot = readxl::read_excel('../path/Annotation.version2.xlsx) %>% as.data.frame()
+annot = readxl::read_excel('../path/Annotation.version2.xlsx') %>% as.data.frame()
 pheno = read.table('../path/gbm_pheno.txt', sep='\t', check.names = F)
 survival = read.table('../path/TCGA-GBM.survival.tsv.txt', sep='\t', check.names = F)
 
