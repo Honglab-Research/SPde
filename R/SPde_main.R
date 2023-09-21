@@ -26,7 +26,7 @@
 #' @export
 SPde <- function(eff,annot,exp, pheno, clincal,cancer_type = 'GBM', gef = -1, percent = 1, fc = 1) {
   
-	#1. Cell line level analysis
+  #1. Cell line level analysis
   ## Get GBM CERES data 
   sample <- annot[which(annot$Annotation == cancer_type), 'Depmap_ID']
   df <- eff[, sample]
@@ -41,7 +41,7 @@ SPde <- function(eff,annot,exp, pheno, clincal,cancer_type = 'GBM', gef = -1, pe
   eG <- intersect(rownames(exp), eGenes)
   exp <- exp[eG, ]
   
-	#2. Patient level analysis
+  #2. Patient level analysis
   ## Perform DEG analysis with extracted genes
   dres <- deg(exp, pheno, fc )
   new_genes <- dres[2][[1]]
