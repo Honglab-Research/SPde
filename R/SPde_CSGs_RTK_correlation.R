@@ -3,9 +3,9 @@
 #' find Synergistic gene Pairs in Drug Efficacy.
 #' Correlation analysis between CSGs and well-known RTK in GBM. 
 #'
-#' @param cox from output of CSGs.
-#' @param rtk; A data frame of well-known RTK genes.(gbm_agilent_ngs_gtex590_t_vs_n_cox.txt)
-#' @param exp; A data frame of TCGA-GBM merged expression.(agilent_ngs_onlyT_pre_gbm_t_final_exp.txt)
+#' @param cox from output of CSGs.(gbm_agilent_ngs_gtex590_t_vs_n_cox.txt)
+#' @param rtk; A data frame of well-known RTK genes.(RTK_list.csv)
+#' @param exp; A data frame of TCGA-GBM merged expression. Extract only tumor data from output of MergeAgilentNGS using pheno data.
 #'
 #' @return A data.frame of filtered_corr.
 #'
