@@ -134,7 +134,7 @@ deg <- function(exp,metadata,fc){
 #' Normalize each data, preprocess : scale 
 #'
 #' @param agilent1; Xena browser provides TCGA-GBM Agilent data separately.
-#' @param agilent1; Xena browser provides TCGA-GBM Agilent data separately.
+#' @param agilent2; Xena browser provides TCGA-GBM Agilent data separately.(https://xenabrowser.net, you cand download here.)
 #' @param gtex40; randomly extracted brain normal data from GTEx db.
 #' @param rna_exp; TCGA-GBM expression data(NGS).
 #'
