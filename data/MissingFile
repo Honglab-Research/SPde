@@ -1,4 +1,12 @@
-1. gbm_exp_agilent2 : It is too large to upload. you cand download here
+These files are too large to upload. 
+
+1. gbm_exp_agilent2 : 
+UCSC-Xena browser, TCGA-GBM data sets
 (https://xenabrowser.net/datapages/?dataset=TCGA.GBM.sampleMap%2FAgilentG4502A_07_2&host=https%3A%2F%2Ftcga.xenahubs.net&removeHub=https%3A%2F%2Fxena.treehouse.gi.ucsc.edu%3A443)
+
+2. CRISPR_gene_effect : 
+DepMap, 22Q2, CRICPR_gene_effect.csv
+** We upload these data separately. But you can download raw data here.
+(https://depmap.org/portal/download/all/)
 
 
