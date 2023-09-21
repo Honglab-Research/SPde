@@ -127,3 +127,66 @@ deg <- function(exp,metadata,fc){
   
   return(list(exp_TN,Fgenes,sam))
 }
+                 
+#' @title MergeAgilentNGS
+#' @description
+#' Merge agilent, NGS, GTEx data.                
+#' Normalize each data, preprocess : scale 
+#'
+#' @param agilent1; Xena browser provides TCGA-GBM Agilent data separately.
+#' @param agilent1; Xena browser provides TCGA-GBM Agilent data separately.
+#' @param gtex40; randomly extracted brain normal data from GTEx db.
+#' @param rna_exp; TCGA-GBM expression data(NGS).
+#'
+#' @return A data frame of test_gbm. 
+#'
+#' @export
+#
+
+MergeAgilentNGS <- function(agilent1, agilent2, gtex40, rna_exp){
+  #aglinat1
+  colnames(agilent_exp1) = agilent_exp1[1,]
+  rownames(agilent_exp1) = agilent_exp1[,1]
+  agilent_exp1 = agilent_exp1[-1,-1]
+
+  gene = rownames(agilent_exp1)
+  agilent_exp1 = apply(agilent_exp1,2,as.numeric)
+  rownames(agilent_exp1) = gene
+
+  #agilent2
+  colnames(agilent_exp2) = agilent_exp2[1,]
+  rownames(agilent_exp2) = agilent_exp2[,1]
+  agilent_exp2 = agilent_exp2[-1,-1]
+  gene = rownames(agilent_exp2)
+  agilent_exp2 = apply(agilent_exp2,2,as.numeric)
+  rownames(agilent_exp2) = gene
+
+  #merge seperated agilent data
+  agilent_exp2 = agilent_exp2[rownames(agilent_exp1),]
+  table(rownames(agilent_exp1) == rownames(agilent_exp2))#T
+
+  agilent_exp = cbind(agilent_exp1, agilent_exp2)
+
+  #If NGS expression data is available, we prioritize its use.
+  sample = setdiff(colnames(agliant_exp), colnames(rna_exp))
+  m_agliant_exp = agliant_exp[,sample]
+  
+  #preprocessing
+  rownames(gtex40) = gtex40$gene
+  gtex40 = gtex40[-1,-1]
+  pre_gtex40 = preprocess(gtex40)
+  
+  pre_m_agilent_exp = preprocess(m_agilent_exp)
+  pre_rna_exp  = preprocess(rna_exp)
+  
+  #merge gene
+  G = intersect(rownames(pre_m_agilent_exp), rownames(pre_rna_exp))
+  G = intersect(rownames(pre_gtex40), G)
+  
+  pre_m_agilent_exp = pre_m_agilent_exp[G,]
+  pre_rna_exp = pre_rna_exp[G,]
+  pre_gtex40 = pre_gtex40[G,]
+  
+  #Final merge all files.
+  test_gbm = cbind(pre_m_agilent_exp, pre_rna_exp, pre_gtex40)
+}
