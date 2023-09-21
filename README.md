@@ -4,36 +4,22 @@
 
 ![image](https://github.com/Honglab-Research/SPde/assets/79962288/fccac2a3-3ec6-4b66-bfe7-6c50c64e2876)
 
+## 01. Dependencies
+- R (>= 4.0.0)
+- forcats (1.0.0)
+- survival (3.4-0)
+- ggplot2 (3.4.2)
+- dplyr (1.1.0)
+- survminer (0.4.9)
+- limma (3.54.2)
+- survival (3.4-0)
+- readxl (1.4.2)
+  
+## 02. Usage
 
-## 01. Installation
-```
-install.packages("devtools")
-devtools::install_github("Honglab-Research/MutaliskR", dependencies = TRUE)
-```
+All input files are in ```data``` folder. Please refer to the example scripts in the ```examples``` folder.
 
-## 02. Dependencies
-- R (>= 3.5.0)
-- ggplot2
-- ggpubr
-- svglite
-- dplyr
-- plyr
-- stringr
-- bedr
-- GenomicRanges
-- DNAcopy
-- lsa
-- scales
-- doParallel
-- foreach
-- parallel
-- BSgenome.Hsapiens.UCSC.hg19 or BSgenome.Hsapiens.UCSC.hg38
-
-## 03. Usage
-
-Examples below use ANNOVAR txt files as input. To use VCF files as input, please refer to the example scripts in the ```examples``` folder.
-
-Identification of ```SBS``` Mutational Signatures
+### A. Load data
 ```
 library(MutaliskR)
 library(BSgenome.Hsapiens.UCSC.hg38)
@@ -95,5 +81,5 @@ results <- IdentifyIndelSignatures(
 
 For output examples, please refer to the zipped files in the ```examples``` folder.
 
-## 04. Contact
+## 03. Contact
 For any questions or issues, please post them in the Issues tab of this repository.
