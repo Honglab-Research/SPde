@@ -4,8 +4,8 @@
 #' Correlation analysis between CSGs and well-known RTK in GBM. 
 #'
 #' @param cox from output of CSGs.
-#' @param rtk; A data frame of well-known RTK genes.
-#' @param exp; A data frame of TCGA-GBM merged expression.
+#' @param rtk; A data frame of well-known RTK genes.(gbm_agilent_ngs_gtex590_t_vs_n_cox.txt)
+#' @param exp; A data frame of TCGA-GBM merged expression.(agilent_ngs_onlyT_pre_gbm_t_final_exp.txt)
 #'
 #' @return A data.frame of filtered_corr.
 #'
@@ -17,8 +17,8 @@ SPde <- function(cox, rtk, exp){
   exp2 = exp[list_RTK_Cox,]
   
   # correlation analysis
-  corr = data.frame(matrix(ncol=91, nrow=91))
-  pval = data.frame(matrix(ncol=91, nrow=91))
+  corr = data.frame(matrix(ncol=93, nrow=93))
+  pval = data.frame(matrix(ncol=93, nrow=93))
   
   for (i in seq(91)){
     gene = list_RTK_Cox[i]
