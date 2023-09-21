@@ -56,7 +56,7 @@ PrepareAnnotationFile <- function(annot){
 #' @description
 #' Pre-process expression data
 #'
-#' @param exp of merged expression file(TCGA-GBM : NGS, Agilent)
+#' @param exp of expression file(TCGA-GBM : NGS, Agilent, GTEx)
 #'
 #' @return A data.frame of norm_exp
 #'
